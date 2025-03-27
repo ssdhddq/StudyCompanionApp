@@ -14,7 +14,7 @@ struct TopicsScreen: View {
     var body: some View {
         List(viewModel.topics) { topic in
             NavigationLink {
-                Text("Карточки по теме: \(topic.title)") 
+                FlashcardsScreen(topic: topic)
             } label: {
                 TopicCardView(topic: topic)
             }
