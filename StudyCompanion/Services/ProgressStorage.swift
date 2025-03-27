@@ -18,13 +18,25 @@ final class ProgressStorage {
     }
 
     func progress(for topic: Topic) -> ProgressData {
-        storage[topic.id.uuidString] ?? ProgressData(knownCards: 0, totalCards: 0)
+        storage[topic.id] ?? ProgressData(knownCards: 0, totalCards: 0, correctTestAnswers: 0, totalTestQuestions: 0)
     }
 
-    func updateProgress(for topic: Topic, known: Int, total: Int) {
-        storage[topic.id.uuidString] = ProgressData(knownCards: known, totalCards: total)
+    func updateTestProgress(for topic: Topic, correct: Int, total: Int) {
+        var progress = storage[topic.id] ?? ProgressData(knownCards: 0, totalCards: 0, correctTestAnswers: 0, totalTestQuestions: 0)
+        progress.correctTestAnswers = correct
+        progress.totalTestQuestions = total
+        storage[topic.id] = progress
         save()
     }
+    
+    func updateCardProgress(for topic: Topic, known: Int, total: Int) {
+        var progress = storage[topic.id] ?? ProgressData(knownCards: 0, totalCards: 0, correctTestAnswers: 0, totalTestQuestions: 0)
+        progress.knownCards = known
+        progress.totalCards = total
+        storage[topic.id] = progress
+        save()
+    }
+
 
     private func save() {
         if let data = try? JSONEncoder().encode(storage) {

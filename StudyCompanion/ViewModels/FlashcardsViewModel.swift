@@ -35,7 +35,7 @@ final class FlashcardsViewModel: ObservableObject {
 
     private func updateProgress() {
         let total = flashcards.count
-        ProgressStorage.shared.updateProgress(for: topic, known: knownCount, total: total)
+        ProgressStorage.shared.updateCardProgress(for: topic, known: knownCount, total: total)
     }
 
 

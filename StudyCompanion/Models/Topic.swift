@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Topic: Identifiable {
-    let id = UUID()
+struct Topic: Identifiable, Hashable {
+    var id: String { title }
     let title: String
     let description: String
 }
+

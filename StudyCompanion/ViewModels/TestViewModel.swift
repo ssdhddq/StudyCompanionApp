@@ -5,7 +5,7 @@
 //  Created by SSDHDDQ on 27.03.2025.
 //
 
-import Foundation
+import SwiftUI
 
 final class TestViewModel: ObservableObject {
     @Published var questions: [TestQuestion] = []
@@ -14,6 +14,13 @@ final class TestViewModel: ObservableObject {
     @Published var isAnswerSubmitted = false
     @Published var correctCount = 0
     @Published var showResult = false
+    @StateObject private var viewModel: TestViewModel
+    let topic: Topic
+    
+    init(topic: Topic) {
+        _viewModel = StateObject(wrappedValue: TestViewModel(topic: topic))
+        self.topic = topic
+    }
 
     var currentQuestion: TestQuestion? {
         guard questions.indices.contains(currentIndex) else { return nil }
@@ -47,15 +54,15 @@ final class TestViewModel: ObservableObject {
     }
 
     func submitAnswer() {
-        guard let selected = selectedAnswer,
-              selected == currentQuestion?.correctAnswer else {
-            nextQuestion()
-            return
+        guard let selected = selectedAnswer else { return }
+
+        if selected == currentQuestion?.correctAnswer {
+            correctCount += 1
         }
 
-        correctCount += 1
         nextQuestion()
     }
+
 
     private func nextQuestion() {
         isAnswerSubmitted = false
@@ -63,6 +70,7 @@ final class TestViewModel: ObservableObject {
         if currentIndex + 1 < questions.count {
             currentIndex += 1
         } else {
+            ProgressStorage.shared.updateTestProgress(for: topic, correct: correctCount, total: questions.count)
             showResult = true
         }
     }
@@ -74,4 +82,6 @@ final class TestViewModel: ObservableObject {
         isAnswerSubmitted = false
         showResult = false
     }
+    
+    
 }

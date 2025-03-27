@@ -29,6 +29,7 @@
 		7C166C6F2D958CBB0019A602 /* TestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C166C6E2D958CBB0019A602 /* TestScreen.swift */; };
 		7C166C712D958DF30019A602 /* ProgressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C166C702D958DF30019A602 /* ProgressData.swift */; };
 		7C166C742D958E410019A602 /* ProgressStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C166C732D958E410019A602 /* ProgressStorage.swift */; };
+		7C166C762D9599010019A602 /* StatisticsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C166C752D9599010019A602 /* StatisticsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		7C166C6E2D958CBB0019A602 /* TestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreen.swift; sourceTree = "<group>"; };
 		7C166C702D958DF30019A602 /* ProgressData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressData.swift; sourceTree = "<group>"; };
 		7C166C732D958E410019A602 /* ProgressStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStorage.swift; sourceTree = "<group>"; };
+		7C166C752D9599010019A602 /* StatisticsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				7C166C662D95893B0019A602 /* FlashcardsScreen.swift */,
 				7C166C6C2D958C850019A602 /* TestQuestionView.swift */,
 				7C166C6E2D958CBB0019A602 /* TestScreen.swift */,
+				7C166C752D9599010019A602 /* StatisticsScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				7C166C672D95893B0019A602 /* FlashcardsScreen.swift in Sources */,
 				7C166C712D958DF30019A602 /* ProgressData.swift in Sources */,
+				7C166C762D9599010019A602 /* StatisticsScreen.swift in Sources */,
 				7C166C742D958E410019A602 /* ProgressStorage.swift in Sources */,
 				7C166C572D9579F20019A602 /* MainScreen.swift in Sources */,
 				7C166C5D2D9584FE0019A602 /* TopicCardView.swift in Sources */,

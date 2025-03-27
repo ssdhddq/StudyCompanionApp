@@ -9,7 +9,12 @@ import SwiftUI
 
 struct TestScreen: View {
     let topic: Topic
-    @StateObject private var viewModel = TestViewModel()
+    @StateObject private var viewModel: TestViewModel
+    
+    init(topic: Topic) {
+        self.topic = topic
+        _viewModel = StateObject(wrappedValue: TestViewModel(topic: topic))
+    }
 
     var body: some View {
         VStack {
