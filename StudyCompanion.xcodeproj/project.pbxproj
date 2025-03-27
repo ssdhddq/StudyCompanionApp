@@ -6,17 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7C166C482D956B760019A602 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C166C452D956B760019A602 /* ContentView.swift */; };
+		7C166C492D956B760019A602 /* StudyCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C166C462D956B760019A602 /* StudyCompanionApp.swift */; };
+		7C166C4A2D956B760019A602 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C166C422D956B760019A602 /* Preview Assets.xcassets */; };
+		7C166C4B2D956B760019A602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C166C442D956B760019A602 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		7C166C312D9569A00019A602 /* StudyCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C166C422D956B760019A602 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7C166C442D956B760019A602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C166C452D956B760019A602 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7C166C462D956B760019A602 /* StudyCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCompanionApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		7C166C332D9569A00019A602 /* StudyCompanion */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = StudyCompanion;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7C166C2E2D9569A00019A602 /* Frameworks */ = {
@@ -32,7 +35,7 @@
 		7C166C282D9569A00019A602 = {
 			isa = PBXGroup;
 			children = (
-				7C166C332D9569A00019A602 /* StudyCompanion */,
+				7C166C472D956B760019A602 /* StudyCompanion */,
 				7C166C322D9569A00019A602 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +46,57 @@
 				7C166C312D9569A00019A602 /* StudyCompanion.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7C166C432D956B760019A602 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7C166C422D956B760019A602 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7C166C472D956B760019A602 /* StudyCompanion */ = {
+			isa = PBXGroup;
+			children = (
+				7C166C4F2D956B970019A602 /* Resources */,
+				7C166C4E2D956B920019A602 /* Views */,
+				7C166C4D2D956B830019A602 /* ViewModels */,
+				7C166C4C2D956B7A0019A602 /* Models */,
+				7C166C432D956B760019A602 /* Preview Content */,
+				7C166C442D956B760019A602 /* Assets.xcassets */,
+				7C166C452D956B760019A602 /* ContentView.swift */,
+				7C166C462D956B760019A602 /* StudyCompanionApp.swift */,
+			);
+			path = StudyCompanion;
+			sourceTree = "<group>";
+		};
+		7C166C4C2D956B7A0019A602 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C166C4D2D956B830019A602 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7C166C4E2D956B920019A602 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C166C4F2D956B970019A602 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +113,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				7C166C332D9569A00019A602 /* StudyCompanion */,
 			);
 			name = StudyCompanion;
 			packageProductDependencies = (
@@ -109,6 +160,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C166C4A2D956B760019A602 /* Preview Assets.xcassets in Resources */,
+				7C166C4B2D956B760019A602 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C166C482D956B760019A602 /* ContentView.swift in Sources */,
+				7C166C492D956B760019A602 /* StudyCompanionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

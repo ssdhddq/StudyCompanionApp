@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  StudyCompanion
 //
-//  Created by SSDHDDQ on 27.03.2025.
+//  Created by SSDHDDQ on 25.02.2025.
 //
 
 import SwiftUI
