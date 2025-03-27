@@ -16,7 +16,7 @@ struct MainScreen: View {
                 HStack(spacing: 16) {
                     ForEach(viewModel.subjects) { subject in
                         NavigationLink {
-                            Text("Темы по предмету: \(subject.title)")
+                            TopicsScreen(subject: subject)
                         } label: {
                             SubjectCardView(subject: subject)
                         }
