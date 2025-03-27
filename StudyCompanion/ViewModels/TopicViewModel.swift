@@ -10,7 +10,11 @@ import Foundation
 final class TopicsViewModel: ObservableObject {
     @Published var topics: [Topic] = []
 
-    func loadTopics(for subject: Subject) {
+    init(subject: Subject) {
+        loadTopics(for: subject)
+    }
+
+    private func loadTopics(for subject: Subject) {
         switch subject.title {
         case "Математика":
             topics = [

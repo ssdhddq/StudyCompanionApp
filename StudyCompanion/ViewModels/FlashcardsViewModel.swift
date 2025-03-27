@@ -16,6 +16,28 @@ final class FlashcardsViewModel: ObservableObject {
         guard flashcards.indices.contains(currentIndex) else { return nil }
         return flashcards[currentIndex]
     }
+    
+    private var knownCount = 0
+    let topic: Topic
+    
+    init(topic: Topic) {
+        self.topic = topic
+    }
+
+
+    func markCardAsKnown(_ known: Bool) {
+        if known {
+            knownCount += 1
+        }
+        nextCard()
+        updateProgress()
+    }
+
+    private func updateProgress() {
+        let total = flashcards.count
+        ProgressStorage.shared.updateProgress(for: topic, known: knownCount, total: total)
+    }
+
 
     func loadFlashcards(for topic: Topic) {
         // позже заменю загрузкой из Firebase
@@ -35,10 +57,6 @@ final class FlashcardsViewModel: ObservableObject {
                 Flashcard(question: "Пример вопроса", answer: "Пример ответа")
             ]
         }
-    }
-
-    func markCardAsKnown(_ known: Bool) {
-        nextCard()
     }
 
     func nextCard() {

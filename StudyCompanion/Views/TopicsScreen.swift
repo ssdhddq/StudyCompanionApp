@@ -9,21 +9,40 @@ import SwiftUI
 
 struct TopicsScreen: View {
     let subject: Subject
-    @StateObject private var viewModel = TopicsViewModel()
+    @StateObject private var viewModel: TopicsViewModel
+
+    init(subject: Subject) {
+        _viewModel = StateObject(wrappedValue: TopicsViewModel(subject: subject))
+        self.subject = subject
+    }
 
     var body: some View {
-        List(viewModel.topics) { topic in
-            NavigationLink {
-                FlashcardsScreen(topic: topic)
-            } label: {
-                TopicCardView(topic: topic)
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(viewModel.topics) { topic in
+                    VStack(alignment: .leading, spacing: 12) {
+                        TopicCardView(topic: topic)
+
+                        HStack {
+                            NavigationLink(destination: FlashcardsScreen(topic: topic)) {
+                                Label("Карточки", systemImage: "rectangle.stack")
+                            }
+                            .buttonStyle(.bordered)
+
+                            NavigationLink(destination: TestScreen(topic: topic)) {
+                                Label("Тест", systemImage: "checkmark.circle")
+                            }
+                            .buttonStyle(.borderedProminent)
+                        }
+                    }
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(16)
+                    .shadow(radius: 3)
+                }
             }
-            .listRowBackground(Color.clear)
+            .padding()
         }
-        .listStyle(.plain)
         .navigationTitle(subject.title)
-        .onAppear {
-            viewModel.loadTopics(for: subject)
-        }
     }
 }

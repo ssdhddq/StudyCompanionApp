@@ -9,7 +9,13 @@ import SwiftUI
 
 struct FlashcardsScreen: View {
     let topic: Topic
-    @StateObject private var viewModel = FlashcardsViewModel()
+    @StateObject private var viewModel: FlashcardsViewModel
+    
+    init(topic: Topic) {
+        self.topic = topic
+        _viewModel = StateObject(wrappedValue: FlashcardsViewModel(topic: topic))
+    }
+
 
     var body: some View {
         VStack(spacing: 24) {
