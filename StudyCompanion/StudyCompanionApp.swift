@@ -2,16 +2,23 @@
 //  StudyCompanionApp.swift
 //  StudyCompanion
 //
-//  Created by SSDHDDQ on 27.03.2025.
+//  Created by SSDHDDQ on 25.02.2025.
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct StudyCompanionApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    init() {
+        //FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreen()
         }
     }
 }
