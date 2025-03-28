@@ -48,6 +48,8 @@
 		7C36518E2D9684DE0047F5C0 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7C36518D2D9684DE0047F5C0 /* GoogleSignIn */; };
 		7C3651902D9684DE0047F5C0 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C36518F2D9684DE0047F5C0 /* GoogleSignInSwift */; };
 		7C3651922D9685300047F5C0 /* GoogleSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3651912D9685300047F5C0 /* GoogleSignInView.swift */; };
+		7C3651952D96C3110047F5C0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3651942D96C3110047F5C0 /* UserManager.swift */; };
+		7C3651972D96C48D0047F5C0 /* SubjectsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3651962D96C48D0047F5C0 /* SubjectsScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		7C36518A2D9683E10047F5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3651912D9685300047F5C0 /* GoogleSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInView.swift; sourceTree = "<group>"; };
 		7C3651932D968F6D0047F5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7C3651942D96C3110047F5C0 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		7C3651962D96C48D0047F5C0 /* SubjectsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 				7C166C7B2D95BA060019A602 /* CalendarGridView.swift */,
 				7C3651802D95C3D10047F5C0 /* TopicItemView.swift */,
 				7C3651912D9685300047F5C0 /* GoogleSignInView.swift */,
+				7C3651962D96C48D0047F5C0 /* SubjectsScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				7C166C792D95B9960019A602 /* DailyActivityStorage.swift */,
 				7C166C8A2D95BFF40019A602 /* FirebaseLoader.swift */,
 				7C36518A2D9683E10047F5C0 /* AppDelegate.swift */,
+				7C3651942D96C3110047F5C0 /* UserManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				7C166C742D958E410019A602 /* ProgressStorage.swift in Sources */,
 				7C166C7A2D95B9960019A602 /* DailyActivityStorage.swift in Sources */,
 				7C166C572D9579F20019A602 /* MainScreen.swift in Sources */,
+				7C3651952D96C3110047F5C0 /* UserManager.swift in Sources */,
 				7C166C5D2D9584FE0019A602 /* TopicCardView.swift in Sources */,
 				7C166C6F2D958CBB0019A602 /* TestScreen.swift in Sources */,
 				7C166C652D9589130019A602 /* FlashcardView.swift in Sources */,
@@ -326,6 +333,7 @@
 				7C166C592D9584BF0019A602 /* Topic.swift in Sources */,
 				7C166C782D95B9680019A602 /* DailyActivity.swift in Sources */,
 				7C166C632D9588B70019A602 /* FlashcardsViewModel.swift in Sources */,
+				7C3651972D96C48D0047F5C0 /* SubjectsScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

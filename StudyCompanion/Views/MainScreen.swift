@@ -8,33 +8,49 @@
 import SwiftUI
 
 struct MainScreen: View {
-    @StateObject private var viewModel = SubjectsViewModel()
+    @StateObject private var userManager = UserManager()
 
     var body: some View {
         NavigationStack {
-            GoogleSignInView()
+            VStack(spacing: 24) {
 
-            VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(viewModel.subjects) { subject in
-                            NavigationLink {
-                                TopicsScreen(subject: subject)
-                            } label: {
-                                SubjectCardView(subject: subject)
+                if userManager.isLoggedIn {
+                    VStack(spacing: 8) {
+                        if let name = userManager.displayName {
+                            Text("Привет, \(name)! 👋")
+                                .font(.title3)
+                        }
+
+                        if let url = userManager.photoURL {
+                            AsyncImage(url: url) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 64, height: 64)
+                                    .clipShape(Circle())
+                            } placeholder: {
+                                ProgressView()
                             }
                         }
+
+                        Button("Выйти из аккаунта") {
+                            userManager.signOut()
+                        }
+                        .buttonStyle(.bordered)
                     }
                     .padding()
+                } else {
+                    GoogleSignInView()
                 }
 
-                NavigationLink(destination: StatisticsScreen()) {
-                    Label("Посмотреть статистику", systemImage: "chart.bar")
+                Spacer()
+
+                NavigationLink("Перейти к предметам") {
+                    SubjectsScreen()
                 }
-                .padding()
                 .buttonStyle(.borderedProminent)
             }
-            .navigationTitle("Выберите предмет")
+            .padding()
         }
     }
 }
