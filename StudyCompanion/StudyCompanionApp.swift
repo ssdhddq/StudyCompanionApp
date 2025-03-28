@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct StudyCompanionApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    init() {
+        //FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             MainScreen()

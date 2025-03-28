@@ -20,26 +20,9 @@ struct TopicsScreen: View {
         ScrollView {
             LazyVStack(spacing: 16) {
                 ForEach(viewModel.topics) { topic in
-                    VStack(alignment: .leading, spacing: 12) {
-                        TopicCardView(topic: topic)
-
-                        HStack {
-                            NavigationLink(destination: FlashcardsScreen(topic: topic)) {
-                                Label("Карточки", systemImage: "rectangle.stack")
-                            }
-                            .buttonStyle(.bordered)
-
-                            NavigationLink(destination: TestScreen(topic: topic)) {
-                                Label("Тест", systemImage: "checkmark.circle")
-                            }
-                            .buttonStyle(.borderedProminent)
-                        }
-                    }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(16)
-                    .shadow(radius: 3)
+                    TopicItemView(subject: subject, topic: topic)
                 }
+
             }
             .padding()
         }

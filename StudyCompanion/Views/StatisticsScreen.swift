@@ -12,6 +12,10 @@ struct StatisticsScreen: View {
     @State private var allTopics: [Topic] = []
 
     var body: some View {
+        Section(header: Text("Календарь активности").font(.headline)) {
+            CalendarGridView(days: DailyActivityStorage.shared.activityForLastNDays(35))
+        }
+        
         ScrollView {
             VStack(spacing: 16) {
                 ForEach(allSubjects) { subject in

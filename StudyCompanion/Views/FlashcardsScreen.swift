@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct FlashcardsScreen: View {
+    let subject: Subject
     let topic: Topic
     @StateObject private var viewModel: FlashcardsViewModel
-    
-    init(topic: Topic) {
-        self.topic = topic
-        _viewModel = StateObject(wrappedValue: FlashcardsViewModel(topic: topic))
-    }
 
+    init(subject: Subject, topic: Topic) {
+        self.subject = subject
+        self.topic = topic
+        _viewModel = StateObject(wrappedValue: FlashcardsViewModel(subject: subject, topic: topic))
+    }
 
     var body: some View {
         VStack(spacing: 24) {
@@ -37,6 +38,7 @@ struct FlashcardsScreen: View {
                             viewModel.markCardAsKnown(false)
                         }
                         .buttonStyle(.bordered)
+
                         Button("Знаю") {
                             viewModel.markCardAsKnown(true)
                         }
@@ -49,8 +51,5 @@ struct FlashcardsScreen: View {
         }
         .padding()
         .navigationTitle(topic.title)
-        .onAppear {
-            viewModel.loadFlashcards(for: topic)
-        }
     }
 }

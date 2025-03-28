@@ -5,7 +5,7 @@
 //  Created by SSDHDDQ on 27.03.2025.
 //
 
-import SwiftUI
+import Foundation
 
 final class TestViewModel: ObservableObject {
     @Published var questions: [TestQuestion] = []
@@ -14,43 +14,24 @@ final class TestViewModel: ObservableObject {
     @Published var isAnswerSubmitted = false
     @Published var correctCount = 0
     @Published var showResult = false
-    @StateObject private var viewModel: TestViewModel
+
+    let subject: Subject
     let topic: Topic
-    
-    init(topic: Topic) {
-        _viewModel = StateObject(wrappedValue: TestViewModel(topic: topic))
+
+    init(subject: Subject, topic: Topic) {
+        self.subject = subject
         self.topic = topic
+
+        FirebaseLoader.shared.loadTestQuestions(subject: subject.title, topic: topic.title) { loadedQuestions in
+            DispatchQueue.main.async {
+                self.questions = loadedQuestions
+            }
+        }
     }
 
     var currentQuestion: TestQuestion? {
         guard questions.indices.contains(currentIndex) else { return nil }
         return questions[currentIndex]
-    }
-
-    func loadQuestions(for topic: Topic) {
-        switch topic.title {
-        case "Алгебра":
-            questions = [
-                TestQuestion(
-                    question: "Формула дискриминанта?",
-                    options: ["D = a² + b²", "D = b² - 4ac", "D = a² - 4ac"],
-                    correctAnswer: "D = b² - 4ac"
-                ),
-                TestQuestion(
-                    question: "Корни квадратного уравнения находятся по формуле:",
-                    options: ["x = (-b ± √D) / 2a", "x = a² + b", "x = b - √a"],
-                    correctAnswer: "x = (-b ± √D) / 2a"
-                )
-            ]
-        default:
-            questions = [
-                TestQuestion(
-                    question: "Что такое тест?",
-                    options: ["Вопрос", "Ответ", "Вариант"],
-                    correctAnswer: "Вопрос"
-                )
-            ]
-        }
     }
 
     func submitAnswer() {
@@ -63,15 +44,19 @@ final class TestViewModel: ObservableObject {
         nextQuestion()
     }
 
-
     private func nextQuestion() {
-        isAnswerSubmitted = false
         selectedAnswer = nil
+        isAnswerSubmitted = false
+
         if currentIndex + 1 < questions.count {
             currentIndex += 1
         } else {
-            ProgressStorage.shared.updateTestProgress(for: topic, correct: correctCount, total: questions.count)
             showResult = true
+            ProgressStorage.shared.updateTestProgress(
+                for: topic,
+                correct: correctCount,
+                total: questions.count
+            )
         }
     }
 
@@ -82,6 +67,5 @@ final class TestViewModel: ObservableObject {
         isAnswerSubmitted = false
         showResult = false
     }
-    
-    
 }
+

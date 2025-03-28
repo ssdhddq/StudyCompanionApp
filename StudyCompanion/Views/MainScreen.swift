@@ -12,6 +12,8 @@ struct MainScreen: View {
 
     var body: some View {
         NavigationStack {
+            GoogleSignInView()
+
             VStack {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {

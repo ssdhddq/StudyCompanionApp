@@ -11,18 +11,28 @@ final class FlashcardsViewModel: ObservableObject {
     @Published var flashcards: [Flashcard] = []
     @Published var currentIndex: Int = 0
     @Published var showAnswer = false
-
+    
     var currentCard: Flashcard? {
         guard flashcards.indices.contains(currentIndex) else { return nil }
         return flashcards[currentIndex]
     }
     
     private var knownCount = 0
+    let subject: Subject
     let topic: Topic
     
-    init(topic: Topic) {
+    init(subject: Subject, topic: Topic) {
+        self.subject = subject
         self.topic = topic
+
+        FirebaseLoader.shared.loadFlashcards(subject: subject.title, topic: topic.title) { cards in
+            DispatchQueue.main.async {
+                self.flashcards = cards
+                print("📦 Загружено карточек: \(cards.count)")
+            }
+        }
     }
+
 
 
     func markCardAsKnown(_ known: Bool) {
@@ -31,6 +41,7 @@ final class FlashcardsViewModel: ObservableObject {
         }
         nextCard()
         updateProgress()
+        DailyActivityStorage.shared.recordActivity()
     }
 
     private func updateProgress() {

@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct TestScreen: View {
+    let subject: Subject
     let topic: Topic
     @StateObject private var viewModel: TestViewModel
-    
-    init(topic: Topic) {
+
+    init(subject: Subject, topic: Topic) {
+        self.subject = subject
         self.topic = topic
-        _viewModel = StateObject(wrappedValue: TestViewModel(topic: topic))
+        _viewModel = StateObject(wrappedValue: TestViewModel(subject: subject, topic: topic))
     }
 
     var body: some View {
@@ -44,8 +46,5 @@ struct TestScreen: View {
         }
         .padding()
         .navigationTitle("Тест: \(topic.title)")
-        .onAppear {
-            viewModel.loadQuestions(for: topic)
-        }
     }
 }
