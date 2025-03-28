@@ -59,16 +59,7 @@ Study Companion — это iOS-приложение, которое помога
 
 ## Скриншоты
 
-![image](https://github.com/user-attachments/assets/e4d6ebb9-3293-4083-9794-610ea997a4a4) ![image](https://github.com/user-attachments/assets/6c7f7fae-b0d4-4e60-818a-0ae4a47d590c) ![image](https://github.com/user-attachments/assets/4bf23159-82d4-4f08-937d-5b33f3d79d9a) ![image](https://github.com/user-attachments/assets/d86ea5fd-963d-495f-9ad1-ef48c78ee791) ![image](https://github.com/user-attachments/assets/2462a49c-d5ac-44e4-bbd4-11da7b4c84e3) ![image](https://github.com/user-attachments/assets/34399886-ede0-4f14-b9b7-d1c0bfc70bf0) ![image](https://github.com/user-attachments/assets/ec286a7c-ce93-4e85-b2aa-b538c17c1e1d)
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/e4d6ebb9-3293-4083-9794-610ea997a4a4) ![image](https://github.com/user-attachments/assets/6c7f7fae-b0d4-4e60-818a-0ae4a47d590c) ![image](https://github.com/user-attachments/assets/4bf23159-82d4-4f08-937d-5b33f3d79d9a) ![image](https://github.com/user-attachments/assets/d86ea5fd-963d-495f-9ad1-ef48c78ee791) ![image](https://github.com/user-attachments/assets/2462a49c-d5ac-44e4-bbd4-11da7b4c84e3) ![image](https://github.com/user-attachments/assets/34399886-ede0-4f14-b9b7-d1c0bfc70bf0) ![image](https://github.com/user-attachments/assets/ec286a7c-ce93-4e85-b2aa-b538c17c1e1d) ![image](https://github.com/user-attachments/assets/e62e2765-e8a2-4df2-bc8f-d34d76e2e533) ![image](https://github.com/user-attachments/assets/802aa526-4521-44c4-9b52-22c1e7afd332) ![image](https://github.com/user-attachments/assets/46ffa0be-5793-4b3d-bab3-a5e946f51e32)
 
 ## Планы по развитию
 
